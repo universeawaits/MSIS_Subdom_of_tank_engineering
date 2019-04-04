@@ -33,12 +33,34 @@
     
 
 
+    <!-- http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#hasEngine -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#hasEngine">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#Tank"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#Engine"/>
+        <rdfs:label xml:lang="ru">Имеет двигатель</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#hasGun -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#hasGun">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#Tank"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#Gun"/>
+        <rdfs:comment xml:lang="ru">Отношение между танком и орудием, которое на нем установлено.</rdfs:comment>
+        <rdfs:label xml:lang="ru">Имеет орудие</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#hasManufactoringCompany -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#hasManufactoringCompany">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#Element"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#Shell"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#Tank"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#ManufactoringCompany"/>
         <rdfs:comment xml:lang="ru">Отношение между изделием и компанией, которая является его производителем.</rdfs:comment>
@@ -59,6 +81,15 @@
     
 
 
+    <!-- http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#hasRadioTransceiver -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#hasRadioTransceiver">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:label xml:lang="ru">Имеет радиостанцию</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#hasRole -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#hasRole">
@@ -67,6 +98,29 @@
         <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#TankRole"/>
         <rdfs:comment xml:lang="ru">Сущность, которая классифицирует танк по роли в бою.</rdfs:comment>
         <rdfs:label xml:lang="ru">Имеет роль</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#hasTurret -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#hasTurret">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#Tank"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#Turret"/>
+        <rdfs:label xml:lang="ru">Имеет башню</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#hasUsableShellTypes -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#hasUsableShellTypes">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#Gun"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#Shell"/>
+        <rdfs:comment xml:lang="ru">Отношение между орудием и снарядом, которое данное орудие может использовать</rdfs:comment>
+        <rdfs:label xml:lang="ru">Использует снаряды</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -106,6 +160,18 @@
     
 
 
+    <!-- http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#autonomyRange -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#autonomyRange">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#Tank"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:comment xml:lang="ru">Свойство танка, выражающее величину, равную дистанции, которую танк может пройти без заправки топливных баков.</rdfs:comment>
+        <rdfs:label>Запас хода</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#burstRadius -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#burstRadius">
@@ -114,6 +180,15 @@
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
         <rdfs:comment xml:lang="ru">Свойство осколочно-фугасного снаряда, выражающее радиус разлета его осколков.</rdfs:comment>
         <rdfs:label xml:lang="ru">Радиус разлета осколков</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#caliber -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#caliber">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:label xml:lang="ru">Калибр</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -142,6 +217,17 @@
     
 
 
+    <!-- http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#cylinderCount -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#cylinderCount">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#Engine"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
+        <rdfs:label xml:lang="ru">Количество цилиндров</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#depression -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#depression">
@@ -166,15 +252,46 @@
     
 
 
-    <!-- http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#frontThickness -->
+    <!-- http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#frontArmor -->
 
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#frontThickness">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#thickness"/>
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#frontArmor">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#Hull"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#Tank"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#Turret"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
         <rdfs:comment xml:lang="ru">Толщина лобового бронированного листа.</rdfs:comment>
-        <rdfs:label xml:lang="ru">Лобовая толщина</rdfs:label>
+        <rdfs:label xml:lang="ru">Лобовое бронирование</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#gunLength -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#gunLength">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#length"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#Gun"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:comment xml:lang="ru">Свойство орудия, выражающее число, равное его длине (в его калибрах).</rdfs:comment>
+        <rdfs:label xml:lang="ru">Длина</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#height -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#height">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#ArmoredSheet"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#ChainTrack"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#FuelReservoir"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#Hull"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#RadioTransceiver"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#Shell"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#Tank"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#Turret"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:label xml:lang="ru">Высота</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -215,9 +332,15 @@
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#length">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#Gun"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#ArmoredSheet"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#ChainTrack"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#FuelReservoir"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#Hull"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#RadioTransceiver"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#Shell"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#Tank"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#Turret"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
-        <rdfs:comment xml:lang="ru">Свойство орудия, выражающее число, равное его длине (в его калибрах).</rdfs:comment>
         <rdfs:label xml:lang="ru">Длина</rdfs:label>
     </owl:DatatypeProperty>
     
@@ -239,22 +362,10 @@
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#muzzleVelocity">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#Gun"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
-        <rdfs:comment xml:lang="ru">Скорость вылета снаряда из орудия.</rdfs:comment>
-        <rdfs:label xml:lang="ru">Скорость вылета снаряда</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#normalization -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#normalization">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#Shell"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
-        <rdfs:comment xml:lang="ru">Свойсвто снаряда, выражающее величину его нормализации.</rdfs:comment>
-        <rdfs:label xml:lang="ru">Величина нормализации</rdfs:label>
+        <rdfs:comment xml:lang="ru">Скорость вылета снаряда из орудия.</rdfs:comment>
+        <rdfs:label xml:lang="ru">Дульная скорость</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -283,18 +394,6 @@
     
 
 
-    <!-- http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#powerToWeightRatio -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#powerToWeightRatio">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#Engine"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
-        <rdfs:comment xml:lang="ru">Свойство двигателя, выражающее его удельную мощность.</rdfs:comment>
-        <rdfs:label xml:lang="ru">Удельная мощность</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
     <!-- http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#rateOfFire -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#rateOfFire">
@@ -303,6 +402,20 @@
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
         <rdfs:comment xml:lang="ru">Свойство орудия, выражающее число, равное скорости его перезарядки.</rdfs:comment>
         <rdfs:label xml:lang="ru">Скорострельность</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#rearArmor -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#rearArmor">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#Hull"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#Tank"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#Turret"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:comment xml:lang="ru">Толщина кормового бронированного листа.</rdfs:comment>
+        <rdfs:label xml:lang="ru">Кормовое бронирование</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -319,15 +432,16 @@
     
 
 
-    <!-- http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#sideThickness -->
+    <!-- http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#sideArmor -->
 
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#sideThickness">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#thickness"/>
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#sideArmor">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#Hull"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#Tank"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#Turret"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
         <rdfs:comment xml:lang="ru">Толщина бокового бронированного листа.</rdfs:comment>
-        <rdfs:label xml:lang="ru">Боковая толщина</rdfs:label>
+        <rdfs:label xml:lang="ru">Боковое бронирование</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -336,24 +450,11 @@
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#slewingRate">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#Hull"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#Tank"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#Turret"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
-        <rdfs:comment xml:lang="ru">Свойство эелемента, которое выражает число, равное скорости его поворота вокруг своей оси.</rdfs:comment>
+        <rdfs:comment xml:lang="ru">Свойство эелемента, которое выражает число, равное скорости его поворота в секунду вокруг своей оси.</rdfs:comment>
         <rdfs:label xml:lang="ru">Скорость поворота</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#sternThickness -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#sternThickness">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#thickness"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#Hull"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#Turret"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
-        <rdfs:comment xml:lang="ru">Толщина кормового бронированного листа.</rdfs:comment>
-        <rdfs:label xml:lang="ru">Кормовая толщина</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -365,7 +466,7 @@
         <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#ArmoredSheet"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
         <rdfs:comment xml:lang="ru">Толщина бронированноо листа.</rdfs:comment>
-        <rdfs:label xml:lang="ru">Толщина</rdfs:label>
+        <rdfs:label xml:lang="ru">Бронирование</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -384,11 +485,29 @@
     
 
 
+    <!-- http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#width -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#width">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#ArmoredSheet"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#ChainTrack"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#FuelReservoir"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#Hull"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#RadioTransceiver"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#Shell"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#Tank"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#Turret"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:label xml:lang="ru">Ширина</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://www.w3.org/2002/07/owl#topDataProperty -->
 
     <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#topDataProperty">
         <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#Gun"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedInt"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
     </rdf:Description>
     
 
@@ -419,7 +538,7 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#ArmorSkirts">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#ArmoredSheet"/>
-        <rdfs:comment xml:lang="ru">Бронированные листы, обрамляющие ходовую часть танка сверху и уменьшающие шанс повреждения снарядом ходовой части почти при любой траектории полета.</rdfs:comment>
+        <rdfs:comment xml:lang="ru">Броня ходовой части - совокупность бронированных листов, обрамляющих ходовую часть танка сверху и уменьшающих шанс повреждения снарядом ходовой части почти при любой траектории полета.</rdfs:comment>
         <rdfs:label xml:lang="ru">Броня ходовой части</rdfs:label>
     </owl:Class>
     
@@ -429,7 +548,7 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#ArmoredSheet">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#Element"/>
-        <rdfs:comment xml:lang="ru">Бронированный лист.</rdfs:comment>
+        <rdfs:comment xml:lang="ru">Бронированный лист - металлический лист из сплава определенных металлов; зачастую в конкретном месте бронирования представлен не одним, а несколькими экземплярами, образуя слои защиты разного уровня.</rdfs:comment>
         <rdfs:label xml:lang="ru">Бронированный лист</rdfs:label>
     </owl:Class>
     
@@ -451,9 +570,9 @@
         <owl:equivalentClass>
             <owl:Class>
                 <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#Large"/>
-                    <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#Low"/>
-                    <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#Medium"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#LargeCaliber"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#LowCaliber"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#MediumCaliber"/>
                 </owl:oneOf>
             </owl:Class>
         </owl:equivalentClass>
@@ -565,16 +684,6 @@
     
 
 
-    <!-- http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#HeavyWeight -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#HeavyWeight">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#TankWeight"/>
-        <rdfs:comment xml:lang="ru">Танки весом от 40 тонн.</rdfs:comment>
-        <rdfs:label xml:lang="ru">Тяжелый</rdfs:label>
-    </owl:Class>
-    
-
-
     <!-- http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#HighExplosiveAntiTankShell -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#HighExplosiveAntiTankShell">
@@ -627,62 +736,12 @@
     
 
 
-    <!-- http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#LargeCaliberGun -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#LargeCaliberGun">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#Gun"/>
-        <rdfs:comment xml:lang="ru">Орудие, имеющее крупный калибр.</rdfs:comment>
-        <rdfs:label xml:lang="ru">Крупнокалиберное орудие</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#LightWeight -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#LightWeight">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#TankWeight"/>
-        <rdfs:comment xml:lang="ru">Танки весом до 20 тонн.</rdfs:comment>
-        <rdfs:label xml:lang="ru">Легкий</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#LowCaliberGun -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#LowCaliberGun">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#Gun"/>
-        <rdfs:comment xml:lang="ru">Орудие, имеющее малый калибр.</rdfs:comment>
-        <rdfs:label xml:lang="ru">Малокалиберное орудие</rdfs:label>
-    </owl:Class>
-    
-
-
     <!-- http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#ManufactoringCompany -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#ManufactoringCompany">
         <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
         <rdfs:comment xml:lang="ru">Компания-производитель изделий.</rdfs:comment>
         <rdfs:label xml:lang="ru">Компания-производитель</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#MediumCaliberGun -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#MediumCaliberGun">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#Gun"/>
-        <rdfs:comment xml:lang="ru">Орудие, имеющее средний калибр.</rdfs:comment>
-        <rdfs:label xml:lang="ru">Среднекалиберное орудие</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#MediumWeight -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#MediumWeight">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#TankWeight"/>
-        <rdfs:comment xml:lang="ru">Танки весом 20 - 40 тонн.</rdfs:comment>
-        <rdfs:label xml:lang="ru">Средний</rdfs:label>
     </owl:Class>
     
 
@@ -755,9 +814,9 @@
         <owl:equivalentClass>
             <owl:Class>
                 <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#Artillery"/>
-                    <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#Cruiser"/>
-                    <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#Infantry"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#ArtilleryTank"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#CruiserTank"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#InfantryTank"/>
                 </owl:oneOf>
             </owl:Class>
         </owl:equivalentClass>
@@ -768,34 +827,16 @@
     
 
 
-    <!-- http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#TankTurreting -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#TankTurreting">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#Turreted"/>
-                    <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#Turretless"/>
-                </owl:unionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#ValuePartition"/>
-        <rdfs:comment xml:lang="ru">Классификатор танка по наличию башни.</rdfs:comment>
-        <rdfs:label xml:lang="ru">Наличие башни</rdfs:label>
-    </owl:Class>
-    
-
-
     <!-- http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#TankWeight -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#TankWeight">
         <owl:equivalentClass>
             <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#HeavyWeight"/>
-                    <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#LightWeight"/>
-                    <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#MediumWeight"/>
-                </owl:unionOf>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#HeavyTank"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#LightTank"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#MediumTank"/>
+                </owl:oneOf>
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#ValuePartition"/>
@@ -821,27 +862,6 @@
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#Element"/>
         <rdfs:comment xml:lang="ru">Погоны башни - два кольца, одно из которых присоеденено к корпусу танка, а второе - к башне, контактирующие посредством шариков и позволяющие вращать башню относительно корпуса.</rdfs:comment>
         <rdfs:label xml:lang="ru">Погоны башни</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#Turreted -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#Turreted">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#TankTurreting"/>
-        <owl:disjointWith rdf:resource="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#Turretless"/>
-        <rdfs:comment xml:lang="ru">Танк, у которого присутствует башня.</rdfs:comment>
-        <rdfs:label xml:lang="ru">Башенный</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#Turretless -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#Turretless">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#TankTurreting"/>
-        <rdfs:comment xml:lang="ru">Танк, у которого отсутствует башня.</rdfs:comment>
-        <rdfs:label xml:lang="ru">Безбашенный</rdfs:label>
     </owl:Class>
     
 
@@ -894,9 +914,9 @@
     
 
 
-    <!-- http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#Artillery -->
+    <!-- http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#ArtilleryTank -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#Artillery">
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#ArtilleryTank">
         <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#TankRole"/>
         <rdfs:comment xml:lang="ru">Артиллерийский танк - танк поддержки и ведения дальнего огня.</rdfs:comment>
         <rdfs:label>Артиллерийский</rdfs:label>
@@ -904,9 +924,9 @@
     
 
 
-    <!-- http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#Cruiser -->
+    <!-- http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#CruiserTank -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#Cruiser">
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#CruiserTank">
         <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#TankRole"/>
         <rdfs:comment xml:lang="ru">Кавалерийский танк - обычно быстрый и легковесный танк, использующийся для быстрого захвата территории.</rdfs:comment>
         <rdfs:label xml:lang="ru">Кавалерийский</rdfs:label>
@@ -923,6 +943,18 @@
     
 
 
+    <!-- http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#FuG_12 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#FuG_12">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#RadioTransceiver"/>
+        <hasManufactoringCompany rdf:resource="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#Lorenz"/>
+        <communicationDistance rdf:datatype="http://www.w3.org/2001/XMLSchema#double">710.0</communicationDistance>
+        <weight rdf:datatype="http://www.w3.org/2001/XMLSchema#double">150.0</weight>
+        <rdfs:label>FuG 12</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#Germany -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#Germany">
@@ -932,18 +964,42 @@
     
 
 
-    <!-- http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#Henschel -->
+    <!-- http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#Gr._39_HL -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#Henschel">
-        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#ManufactoringCompany"/>
-        <hasManufactoringCompany rdf:resource="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#Germany"/>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#Gr._39_HL">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#HighExplosiveAntiTankShell"/>
+        <burstRadius rdf:datatype="http://www.w3.org/2001/XMLSchema#double">0.0</burstRadius>
+        <muzzleVelocity rdf:datatype="http://www.w3.org/2001/XMLSchema#double">600.0</muzzleVelocity>
+        <penetration rdf:datatype="http://www.w3.org/2001/XMLSchema#double">44.0</penetration>
+        <weight rdf:datatype="http://www.w3.org/2001/XMLSchema#double">7.65</weight>
+        <rdfs:label>Gr. 39 HL</rdfs:label>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#Infantry -->
+    <!-- http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#HeavyTank -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#Infantry">
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#HeavyTank">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#TankWeight"/>
+        <rdfs:comment xml:lang="ru">Вес больше 40 тонн</rdfs:comment>
+        <rdfs:label xml:lang="ru">Тяжелый</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#Henschel-Werke -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#Henschel-Werke">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#ManufactoringCompany"/>
+        <hasOriginCountry rdf:resource="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#Germany"/>
+        <rdfs:label xml:lang="de">Henschel-Werke</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#InfantryTank -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#InfantryTank">
         <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#TankRole"/>
         <rdfs:comment xml:lang="ru">Пехотный танк - танк, имеющий хорошее бронирование и использующийся как вспомогательный элемент на поле боя, где основными силами являются пехотные войска.</rdfs:comment>
         <rdfs:label xml:lang="ru">Пехотный</rdfs:label>
@@ -969,9 +1025,9 @@
     
 
 
-    <!-- http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#Large -->
+    <!-- http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#LargeCaliber -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#Large">
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#LargeCaliber">
         <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#Caliber"/>
         <rdfs:comment xml:lang="ru">Калибр орудия от 110 мм и выше.</rdfs:comment>
         <rdfs:label xml:lang="ru">Крупный</rdfs:label>
@@ -979,9 +1035,29 @@
     
 
 
-    <!-- http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#Low -->
+    <!-- http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#LightTank -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#Low">
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#LightTank">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#TankWeight"/>
+        <rdfs:comment xml:lang="ru">Вес менее 20 тонн</rdfs:comment>
+        <rdfs:label xml:lang="ru">Легкий</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#Lorenz -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#Lorenz">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#ManufactoringCompany"/>
+        <hasOriginCountry rdf:resource="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#Germany"/>
+        <rdfs:label>Lorenz</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#LowCaliber -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#LowCaliber">
         <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#Caliber"/>
         <rdfs:comment xml:lang="ru">Калибр орудия в диапазоне 20 - 60 мм.</rdfs:comment>
         <rdfs:label xml:lang="ru">Малый</rdfs:label>
@@ -989,12 +1065,95 @@
     
 
 
-    <!-- http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#Medium -->
+    <!-- http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#MainBattleTank -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#Medium">
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#MainBattleTank">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#TankRole"/>
+        <rdfs:comment xml:lang="ru">Основной боевой танк - многоцелевой танк, сочетающий высокую огневую мощь и хорошие защищённость с подвижностью.</rdfs:comment>
+        <rdfs:label xml:lang="ru">Основной боевой</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#Maybach_HL_230_P45 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#Maybach_HL_230_P45">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#Engine"/>
+        <hasManufactoringCompany rdf:resource="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#Porsche"/>
+        <cylinderCount rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">12</cylinderCount>
+        <power rdf:datatype="http://www.w3.org/2001/XMLSchema#double">694.0</power>
+        <weight rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1200.0</weight>
+        <rdfs:label>Maybach HL 230 P45</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#MediumCaliber -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#MediumCaliber">
         <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#Caliber"/>
         <rdfs:comment xml:lang="ru">Калибр орудия в диапазоне 60 - 110 мм.</rdfs:comment>
         <rdfs:label xml:lang="ru">Средний</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#MediumTank -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#MediumTank">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#TankWeight"/>
+        <rdfs:comment xml:lang="ru">Вес в диапазоне 20-40 тонн</rdfs:comment>
+        <rdfs:label xml:lang="ru">Средний</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#Porsche -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#Porsche">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#ManufactoringCompany"/>
+        <hasOriginCountry rdf:resource="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#Germany"/>
+        <rdfs:label>Porsche</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#Pz.Kpfw._VI_H_Ausf._H2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#Pz.Kpfw._VI_H_Ausf._H2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#Turret"/>
+        <hasManufactoringCompany rdf:resource="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#Henschel-Werke"/>
+        <frontArmor rdf:datatype="http://www.w3.org/2001/XMLSchema#double">100.0</frontArmor>
+        <index rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pz.Kpfw. VI H Ausf. H2</index>
+        <rearArmor rdf:datatype="http://www.w3.org/2001/XMLSchema#double">80.0</rearArmor>
+        <sideArmor rdf:datatype="http://www.w3.org/2001/XMLSchema#double">80.0</sideArmor>
+        <slewingRate rdf:datatype="http://www.w3.org/2001/XMLSchema#double">24.0</slewingRate>
+        <weight rdf:datatype="http://www.w3.org/2001/XMLSchema#double">8250.0</weight>
+        <rdfs:label>Pz.Kpfw. VI H Ausf. H2</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#Pzgr._39 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#Pzgr._39">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#ArmorPiercingShell"/>
+        <muzzleVelocity rdf:datatype="http://www.w3.org/2001/XMLSchema#double">773.0</muzzleVelocity>
+        <penetration rdf:datatype="http://www.w3.org/2001/XMLSchema#double">144.0</penetration>
+        <weight rdf:datatype="http://www.w3.org/2001/XMLSchema#double">10.2</weight>
+        <rdfs:label>Pzgr. 39</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#Pzgr._40 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#Pzgr._40">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#CompositeShell"/>
+        <muzzleVelocity rdf:datatype="http://www.w3.org/2001/XMLSchema#double">930.0</muzzleVelocity>
+        <penetration rdf:datatype="http://www.w3.org/2001/XMLSchema#double">194.0</penetration>
+        <weight rdf:datatype="http://www.w3.org/2001/XMLSchema#double">7.3</weight>
+        <rdfs:label>Pzgr. 40</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -1008,12 +1167,42 @@
     
 
 
+    <!-- http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#ThyssenKrupp -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#ThyssenKrupp">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#ManufactoringCompany"/>
+        <hasOriginCountry rdf:resource="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#Germany"/>
+        <rdfs:label>ThyssenKrupp</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#Tiger_I -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#Tiger_I">
         <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#Tank"/>
+        <hasEngine rdf:resource="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#Maybach_HL_230_P45"/>
+        <hasGun rdf:resource="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#8.8_cm_KwK_36"/>
+        <hasManufactoringCompany rdf:resource="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#Henschel-Werke"/>
+        <hasRadioTransceiver rdf:resource="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#FuG_12"/>
+        <hasRole rdf:resource="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#MainBattleTank"/>
+        <hasTurret rdf:resource="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#Pz.Kpfw._VI_H_Ausf._H2"/>
+        <hasWeight rdf:resource="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#HeavyTank"/>
+        <ammunitionAmount rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">92</ammunitionAmount>
+        <autonomyRange rdf:datatype="http://www.w3.org/2001/XMLSchema#double">110.0</autonomyRange>
         <crewSize rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">5</crewSize>
-        <index rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Panzerkampfwagen Tiger Ausf. E</index>
+        <frontArmor rdf:datatype="http://www.w3.org/2001/XMLSchema#double">100.0</frontArmor>
+        <height rdf:datatype="http://www.w3.org/2001/XMLSchema#double">2930.0</height>
+        <height rdf:datatype="http://www.w3.org/2001/XMLSchema#double">3705.0</height>
+        <index rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pz.Kpfw.VI Ausf.H1</index>
+        <isTurreted rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isTurreted>
+        <length rdf:datatype="http://www.w3.org/2001/XMLSchema#double">6316.0</length>
+        <movementRate rdf:datatype="http://www.w3.org/2001/XMLSchema#double">37.0</movementRate>
+        <rearArmor rdf:datatype="http://www.w3.org/2001/XMLSchema#double">80.0</rearArmor>
+        <sideArmor rdf:datatype="http://www.w3.org/2001/XMLSchema#double">80.0</sideArmor>
+        <slewingRate rdf:datatype="http://www.w3.org/2001/XMLSchema#double">26.0</slewingRate>
+        <weight rdf:datatype="http://www.w3.org/2001/XMLSchema#double">57.0</weight>
+        <rdfs:label xml:lang="en">Tiger</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -1021,7 +1210,20 @@
     <!-- http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#8.8_cm_KwK_36 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#8.8_cm_KwK_36">
-        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#LargeCaliberGun"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#Gun"/>
+        <hasCaliber rdf:resource="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#LargeCaliber"/>
+        <hasManufactoringCompany rdf:resource="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#ThyssenKrupp"/>
+        <hasUsableShellTypes rdf:resource="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#Gr._39_HL"/>
+        <hasUsableShellTypes rdf:resource="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#Pzgr._39"/>
+        <hasUsableShellTypes rdf:resource="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#Pzgr._40"/>
+        <caliber rdf:datatype="http://www.w3.org/2001/XMLSchema#double">88.0</caliber>
+        <depression rdf:datatype="http://www.w3.org/2001/XMLSchema#double">360.0</depression>
+        <elevation rdf:datatype="http://www.w3.org/2001/XMLSchema#double">23.0</elevation>
+        <gunLength rdf:datatype="http://www.w3.org/2001/XMLSchema#double">56.0</gunLength>
+        <rateOfFire rdf:datatype="http://www.w3.org/2001/XMLSchema#double">9.52</rateOfFire>
+        <scatteringRadius rdf:datatype="http://www.w3.org/2001/XMLSchema#double">0.38</scatteringRadius>
+        <weight rdf:datatype="http://www.w3.org/2001/XMLSchema#double">2050.0</weight>
+        <rdfs:label>8.8 cm KwK 36</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -1054,22 +1256,6 @@
         </owl:members>
     </rdf:Description>
     <rdf:Description>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#HeavyWeight"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#LightWeight"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#MediumWeight"/>
-        </owl:members>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#LargeCaliberGun"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#LowCaliberGun"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#MediumCaliberGun"/>
-        </owl:members>
-    </rdf:Description>
-    <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
         <owl:distinctMembers rdf:parseType="Collection">
             <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#America"/>
@@ -1083,9 +1269,17 @@
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
         <owl:distinctMembers rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#Artillery"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#Cruiser"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#Infantry"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#ArtilleryTank"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#CruiserTank"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#InfantryTank"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#HeavyTank"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#LightTank"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2019/2/tank_engineering#MediumTank"/>
         </owl:distinctMembers>
     </rdf:Description>
 </rdf:RDF>
